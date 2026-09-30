@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #0057AD;
+}
+
+header > a > img {
+    width: 15%;
+    height: auto;
+    margin: 5px;
+}
+
+.divider-field {
+    margin: 20px auto; 
+    padding: 10px; 
+    text-align: center;
+}
+.text-divide {
+    text-align: left;
+    margin-left: 10%
+}
+
+.text-divide h1 > span {
+    color: #0057AD;
+}
+
+main > .divider-field > .divider{
+    background-color: #FBDA0C;
+    border: none;
+    height: 5px;             
+    width: 80%;        
+    margin: 20px auto;
+}
