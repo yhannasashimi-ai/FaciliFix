@@ -1,0 +1,190 @@
+/* ============================================
+   Facilities page (room list)
+   Load AFTER base.css
+   ============================================ */
+
+/* ---------- Search + Add Room ---------- */
+.toolbar {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px 24px;
+    margin-bottom: 16px;
+}
+
+.search-box {
+    position: relative;
+    flex: 1 1 320px;
+    max-width: 600px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 12px 46px 12px 18px;
+    font: inherit;
+    border: 1px solid #ccc;
+    border-radius: 999px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.search-box input:focus {
+    outline: 2px solid var(--blue);
+    border-color: var(--blue);
+}
+
+.search-box .icon {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
+    color: #555;
+    pointer-events: none;
+}
+
+/* ---------- Floor tag filters ---------- */
+.tag-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.tag-chip {
+    padding: 8px 14px;
+    font: inherit;
+    color: var(--ink);
+    background: #e0e0e0;
+    border: 1px solid #999;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.tag-chip:hover {
+    background: #d0d0d0;
+}
+
+.tag-chip[aria-pressed="true"] {
+    color: var(--yellow);
+    background: var(--blue);
+    border-color: var(--blue);
+}
+
+/* ---------- Room cards ---------- */
+.room-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.room-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    min-width: 0;
+    padding: 18px 20px;
+    color: var(--ink);
+    text-decoration: none;
+    background: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.room-card:hover,
+.room-card:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+.room-card:focus-visible {
+    outline: 3px solid var(--yellow);
+    outline-offset: 2px;
+}
+
+.room-icon .icon {
+    width: 48px;
+    height: 48px;
+    stroke-width: 1.6;
+}
+
+.room-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.room-info h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+.room-info p {
+    color: #444;
+}
+
+.room-arrow {
+    align-self: flex-start;
+}
+
+.empty-message {
+    padding: 32px 0;
+    text-align: center;
+    color: #555;
+}
+
+/* ---------- Pagination (also used on the Room page) ---------- */
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 40px;
+}
+
+.page-button {
+    min-width: 44px;
+    height: 44px;
+    font: inherit;
+    font-weight: 700;
+    color: var(--ink);
+    background: #fff;
+    border: 0;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.page-button:hover {
+    background: #f0f0f0;
+}
+
+.page-button.active {
+    color: var(--yellow);
+    background: var(--blue);
+}
+
+.page-arrow {
+    display: inline-flex;
+    padding: 6px;
+    color: #333;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+}
+
+.page-arrow .icon {
+    width: 28px;
+    height: 28px;
+}
+
+.page-arrow:disabled {
+    opacity: 0.3;
+    cursor: default;
+}
+
+/* ---------- Small screens ---------- */
+@media (max-width: 800px) {
+    .room-grid {
+        grid-template-columns: 1fr;
+    }
+}

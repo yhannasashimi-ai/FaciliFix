@@ -1,0 +1,63 @@
+/* ============================================
+   Admin dashboard
+   Load AFTER base.css
+   ============================================ */
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 382px));
+    justify-content: center;
+    gap: 24px;
+}
+
+.dashboard-card {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    overflow: hidden;
+    color: #fff;
+    text-decoration: none;
+    background: var(--blue);
+    border: 1px solid #d7dfe7;
+    border-radius: 2px;
+    box-shadow: 0 2px 8px rgba(20, 35, 50, 0.08);
+    transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.dashboard-card:hover,
+.dashboard-card:focus-visible {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(20, 35, 50, 0.16);
+}
+
+.dashboard-card:focus-visible {
+    outline: 3px solid var(--yellow);
+    outline-offset: 3px;
+}
+
+.dashboard-card img {
+    display: block;
+    width: calc(100% - 32px);
+    margin: 16px;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    background: #e8edf2;
+    border-radius: 2px;
+}
+
+.dashboard-card-content {
+    padding: 40px;
+}
+
+.dashboard-card h2 {
+    margin-bottom: 8px;
+    color: #fff;
+    font-size: 1.25rem;
+    text-align: center;
+}
+
+.dashboard-card p {
+    color: #fff;
+    line-height: 1.5;
+    text-align: justify;
+}
